@@ -17,25 +17,20 @@
         </div>
     </div>
 
-    <h2>@ViewBag.product.Name</h2>
+    <h2>Add new product</h2>
 
-    <form asp-controller="Admin" asp-action="UpdateProduct" method="post">
-        <input name="id" type="text" hidden value="@ViewBag.product.Id" />
+    <form asp-controller="Admin" asp-action="AddNewProduct" method="post">
+
         <div class="form-group">
             <label for="productName">Product Name</label>
-            <input type="text" class="form-control" id="productName" name="productName" value="@ViewBag.product.Name">
+            <input type="text" class="form-control" id="productName" name="productName">
         </div>
         <div class="form-group">
             <label for="description">Desription</label>
-            <textarea class="form-control" id="description" name="description">@ViewBag.product.Description</textarea>
+            <textarea class="form-control" id="description" name="description"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
-    <img src="~/uploads/images/@ViewBag.product.Image" width="100px" />
-    <form asp-controller="Admin" asp-action="UpdateProductImage" method="post" enctype="multipart/form-data">
-        <input name="id" type="text" hidden value="@ViewBag.product.Id" />
-        <input type="file" name="image" />
-        <input type="submit" value="Change Image" />
-    </form>
+   
 </main>
