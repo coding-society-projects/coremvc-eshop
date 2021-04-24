@@ -15,8 +15,11 @@
             <div class="card-body">
                 <h5 class="card-title">@product.Name</h5>
                 <p class="card-text">@product.Description</p>
-                <p>Category: @product.Category.Name</p>
-                <a href="#" class="btn btn-primary">Add to Cart</a>
+                @if (@product.Category != null)
+                {
+                    <p>Category: @product.Category.Name</p>
+                }
+                <a href="~/Shop/AddToCart/@product.Id" class="btn btn-primary">Add to Cart</a>
             </div>
         </div>
 
